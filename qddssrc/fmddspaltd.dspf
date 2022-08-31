@@ -1,0 +1,97 @@
+     A*  Spark Trading NZ Ltd.
+     A*
+     A*  Display file:  FMDALTDTL
+     A*  Text        :  DSPALTDTL command display
+     A*  Description :  Displays the contents of FMPALTDTL
+     A*  Author      :  A Jenks
+     A*  Date        :  09 Sep 2021
+     A*
+     A*  Modifications
+     A* ------------------------------------------------------------------------
+     A* dd Mmm yyyy  A Programmer
+     A* Blah blah blah
+     A* ------------------------------------------------------------------------
+     A*
+     A                                      DSPSIZ(27 132 *DS3)
+     A                                      PRINT
+     A                                      ERRSFL
+     A                                      INDARA
+     A*-------------------------------------------------------------------------
+     A          R LISTSFL                   SFL
+     A            S_OPT          1A  B  7  3
+     A            K_COLOUR       1A  H
+     A            K_ADETIM      26A  H
+     A            K_ADEVNT      25A  H
+     A            K_ADITEM     100A  H
+     A            K_ADTEXT    3000A  H
+     A            S_ADTEXT      91A  O  7  6
+     A  30                                  COLOR(YLW)
+     A            S_DOW          3   O  7 99
+     A  30                                  COLOR(YLW)
+     A            S_ADOTIM      26A  O  7103
+     A  30                                  COLOR(YLW)
+     A            S_FLAG         1A  O  7130
+     A  30                                  COLOR(YLW)
+     A*-------------------------------------------------------------------------
+     A          R LISTHDG                   SFLCTL(LISTSFL)
+     A                                      SFLSIZ(0018)
+     A                                      SFLPAG(0018)
+     A                                      CA01 CA02 CA03 CA04 CA05 CA06
+     A                                      CA07 CA08 CA09 CA10 CA11 CA12
+     A                                      CA13 CA14 CA15 CA16 CA17 CA18
+     A                                      CA19 CA20 CA21 CA22 CA23 CA24
+     A                                      PAGEUP PAGEDOWN
+     A                                      OVERLAY
+     A  27                                  SFLDSP
+     A  27                                  SFLDSPCTL
+     A N27                                  SFLCLR
+     A  28                                  SFLEND(*MORE)
+     A                                  1  2'Spark NZ Ltd'
+     A                                  1 57'IBM i Support'
+     A                                      COLOR(PNK)
+     A                                  1121TIME
+     A                                  1111DATE
+     A                                      EDTCDE(Y)
+     A            SCR_PROG      10A  O  2  2
+     A                                  2 53'Display alert details'
+     A                                      COLOR(WHT)
+     A                                  2111SYSNAME
+     A                                  2121USER
+     A                                  4  2'Type option, then press Enter.'
+     A                                      COLOR(BLU)
+     A                                  5  3'5=Display full text'
+     A                                      COLOR(BLU)
+     A                                  5 24'6=Display event details'
+     A                                      COLOR(BLU)
+     A                                  5 51'* Indicates alerts sent'
+     A                                      COLOR(PNK)
+     A                                  4 85'Position to . . .'
+     A            PST_DATE      10A  B  4103
+     A  31                                  DSPATR(RI)
+     A            PST_TIME       8A  B  4114
+     A  32                                  DSPATR(RI)
+
+     A*-------------------------------------------------------------------------
+     A          R LISTKEY
+     A                                      OVERLAY
+     A                                 26  2'F3=Exit'
+     A                                      COLOR(BLU)
+     A                                 26 12'F5=Refresh'
+     A                                      COLOR(BLU)
+     A                                 26 24'F12=Cancel'
+     A                                      COLOR(BLU)
+     A                                 26 36'F18=Bottom'
+     A                                      COLOR(BLU)
+     A*-------------------------------------------------------------------------
+     A          R MSGSFL                    SFL
+     A                                      SFLMSGRCD(27)
+     A            MSGKEY                    SFLMSGKEY
+     A            SCR_PROG                  SFLPGMQ
+     A*-------------------------------------------------------------------------
+     A          R MSGCTL                    SFLCTL(MSGSFL)
+     A                                      OVERLAY
+     A                                      SFLSIZ(2) SFLPAG(1)
+     A                                      SFLDSPCTL SFLDSP
+     A N29                                  SFLEND
+     A                                      SFLINZ
+     A            SCR_PROG                  SFLPGMQ 

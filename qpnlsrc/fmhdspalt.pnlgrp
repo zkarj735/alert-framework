@@ -1,0 +1,36 @@
+:PNLGRP.
+:COPYR.'CRAJEN coders (C) 2021.'
+:HELP   name='DSPALT/ALL'.
+:IMHELP name='DSPALT'.
+:IMHELP name='DSPALT/POS'.
+:EHELP.
+.**********************************************************************
+.* PRIMARY HELP TEXT FOR THE COMMAND.                                ·*
+.**********************************************************************
+:HELP name='DSPALT'.
+Help for the DSPALT command
+:P.
+This command displays the alert details from the FMPALTDTL alert detail
+file. This file can hold multiple alert detail records for a single
+alert event.
+:P.
+For more information on how to configure and manage alerts, see the wiki.
+:EHELP.
+.**********************************************************************
+.* HELP TEXT FOR THE PARAMETERS.                                     ·*
+.**********************************************************************
+:HELP name='DSPALT/POS'.
+Positon to (POS)
+:XH3.Position to (POS)
+:P.
+Specify one of the following
+:UL.
+:LI.*TODAY - Show todays data. (Default)
+:LI.*MON, *TUE, *WED, *THU, *FRI, *SAT, or *SUN for the previous
+such day.
+:LI.######## or ####-#### where # is a hex digit. This is a hash code
+for a particular event. You can find this in the alert message text.
+:EUL.
+:EHELP.
+.**********************************************************************
+:EPNLGRP.   
