@@ -14,7 +14,7 @@
 //******************************************************************************
 
 //@ OPT: *CRTMOD
-//@ POST: CRTPGM FMLCL/FMRDSPALTD MODULE(FMLCL/FMRDSPALTD)
+//@ POST: CRTPGM AJENKS/FMRDSPALTD MODULE(AJENKS/FMRDSPALTD)
 
 ctl-opt debug;
 
