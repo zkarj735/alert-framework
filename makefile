@@ -8,7 +8,7 @@ dspalt.cmd: fmhdspalt.pnlgrp
 fmrdspaltd.sqlrpgle: fmddspaltd.dspf
 
 %.sqlrpgle:
-	-system -qi "CRTSRCPF FILE($(BIN_LIB)/QRPGLESRC) RCDLEN(92)"
+	-system -qi "CRTSRCPF FILE($(BIN_LIB)/QRPGLESRC) RCDLEN(112)"
 	system "CPYFRMSTMF FROMSTMF('./qrpglesrc/$*.sqlrpgle') TOMBR('/QSYS.lib/$(BIN_LIB).lib/QRPGLESRC.file/$*.mbr') MBROPT(*REPLACE)"
 	system "CHGPFM FILE($(BIN_LIB)/QRPGLESRC) MBR($*) SRCTYPE(SQLRPGLE)"
 	liblist -a $(LIBLIST);\
