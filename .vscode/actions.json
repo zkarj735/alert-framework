@@ -6,7 +6,7 @@
             "GLOBAL"
         ],
         "deployFirst": true,
-        "command": "/QOpenSys/pkgs/bin/gmake BIN_LIB=AJENKS OPTS=*EVENTF"
+        "command": "/QOpenSys/pkgs/bin/gmake BIN_LIB=DEMOTEST OPTS=*EVENTF"
     },
     {
         "name": "PROD Deploy and build",
@@ -15,6 +15,6 @@
             "GLOBAL"
         ],
         "deployFirst": true,
-        "command": "/QOpenSys/pkgs/bin/gmake BIN_LIB=FMLCL OPTS=*EVENTF"
+        "command": "/QOpenSys/pkgs/bin/gmake BIN_LIB=DEMOPROD OPTS=*EVENTF"
     }
 ]
