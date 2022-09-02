@@ -12,7 +12,10 @@ fmrdspaltd.sqlrpgle: fmddspaltd.dspf
 	system "CPYFRMSTMF FROMSTMF('./qrpglesrc/$*.sqlrpgle') TOMBR('/QSYS.lib/$(BIN_LIB).lib/QRPGLESRC.file/$*.mbr') MBROPT(*REPLACE)"
 	system "CHGPFM FILE($(BIN_LIB)/QRPGLESRC) MBR($*) SRCTYPE(SQLRPGLE)"
 	liblist -a $(LIBLIST);\
-	system -s "FMCMPSRC SOURCE($(BIN_LIB)/QRPGLESRC) MEMBER($*) COMPTYPE(*COMPILE) SBMJOB(*NO)"
+	system -s "FMCMPSRC SOURCE($(BIN_LIB)/QRPGLESRC) MEMBER($*) COMPTYPE(*MODULE) SBMJOB(*NO)"
+	if [[ "$*" = "fmrdspaltd" ]]; then\
+		system "CRTPGM PGM($(BIN_LIB)/$*) MODULE($(BIN_LIB)/$*)";\
+	fi
 
 %.cmd:
 	-system -qi "CRTSRCPF FILE($(BIN_LIB)/QCMDSRC) RCDLEN(92)"

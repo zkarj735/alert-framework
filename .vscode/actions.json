@@ -1,11 +1,20 @@
 [
     {
-        "name": "Deploy and build",
+        "name": "TEST Deploy and build",
         "environment": "pase",
         "extensions": [
             "GLOBAL"
         ],
         "deployFirst": true,
         "command": "/QOpenSys/pkgs/bin/gmake BIN_LIB=AJENKS OPTS=*EVENTF"
+    },
+    {
+        "name": "PROD Deploy and build",
+        "environment": "pase",
+        "extensions": [
+            "GLOBAL"
+        ],
+        "deployFirst": true,
+        "command": "/QOpenSys/pkgs/bin/gmake BIN_LIB=FMLCL OPTS=*EVENTF"
     }
 ]
