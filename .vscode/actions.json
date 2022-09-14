@@ -16,5 +16,23 @@
         ],
         "deployFirst": true,
         "command": "/QOpenSys/pkgs/bin/gmake BIN_LIB=DEMOPROD OPTS=*EVENTF"
-    }
+    },
+    {
+        "name": "Bob Build",
+        "command": "err=*EVENTF BUILDLIB=&CURLIB /QOpenSys/pkgs/bin/makei build",
+        "extensions": [
+          "GLOBAL"
+        ],
+        "environment": "pase",
+        "deployFirst": true
+      },
+      {
+          "command": "err=*EVENTF /QOpenSys/pkgs/bin/makei compile -f &BASENAME -e BUILDLIB=&CURLIB",
+          "deployFirst": true,
+          "environment": "pase",
+          "extensions": [
+              "GLOBAL"
+          ],
+          "name": "Bob Compile"
+      }
 ]

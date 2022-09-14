@@ -1,0 +1,7 @@
+{
+    "version": "0.0.1",
+    "description": "Alerting framework",
+    "objlib": "&BUILDLIB",
+    "curlib": "&BUILDLIB",
+    "preUsrlibl": "&BUILDLIB"
+}
